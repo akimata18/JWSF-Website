@@ -406,11 +406,11 @@ csmall2 {
 /* Contact Page */
 #contactwrap {
 	background: url(https://lh3.googleusercontent.com/121sKegx4LNoUMmuM6ScuDCTYYuplRIZeQbijZ339P-wklfzuB-hjA_VW8MQLl1JL1j0v46u5Kw5dqkyEBgCmbpoF_U=w1896-h851) no-repeat center top;
-	margin-top: 100px;
+	margin-top: -60px;
 	padding-top:0px;
 	text-align:center;
 	background-attachment: relative;
-	background-position: center center;
+	background-position: absolute;
 	min-height: 400px;
 	width: 100%;
 
