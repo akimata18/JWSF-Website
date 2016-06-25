@@ -399,6 +399,58 @@ csmall2 {
 	margin-bottom: 40px;
 }
 
+.photo-gallery {
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.img {
+  margin: 0px 5px 5px 5px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 150px;
+  width: auto;
+}
+@media (min-width: 720px) {
+  .photo-gallery {
+      margin-bottom: 100px;
+  }
+  .img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+@media (min-width: 990px) {
+  .photo-gallery {
+      margin-bottom: 300px;
+  }
+
+  .img {
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .photo-gallery {
+      margin-bottom: 250px;
+  }
+  .img {
+    height: 150px;
+    width: auto;
+  }
+}
+
+.gallery-header {
+  text-align: center;
+  display: block;
+}
+
 .badge-theme {
 	background: #a64dff;
 }
