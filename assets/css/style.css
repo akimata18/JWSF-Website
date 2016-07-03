@@ -209,6 +209,14 @@ a:focus {
 	SITE WRAPS
 ################################################################# */
 
+.jumbotron {
+  position: absolute;
+  background: #5900b3 url("../img/momevent.jpg") center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
 #headerwrap {
 	background-color: #5900b3;
 	min-height: 550px;
@@ -326,7 +334,7 @@ a:focus {
 
 /* clients logo */
 #cwrap {
-	background: #f7f7f7;
+	background: #fff;
 	margin-top: 0px;
 	padding-top: 20px;
 	padding-bottom: 100px;
