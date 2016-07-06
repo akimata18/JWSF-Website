@@ -42,19 +42,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Japanese Women's Society Foundation</a>
+          <a class="navbar-brand" href="index.html">JWSF</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
-            <li class="active"><a href="contact.html">CONTACT</a></li>
-            <li class="dropdown">
+            <li><a href="contact.html">CONTACT</a></li>
+            <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a>
               <ul class="dropdown-menu">
-
-              <li><a href="single-post.html">FUNDRAISING</a></li>
-
+                 <li><a href="fundraising.html">FUNDRAISING</a></li>
                 <li><a href="portfolio.html">GRANTS/SCHOLARSHIPS</a></li>
                 <li><a href="single-project.html">PHOTOS</a></li>
               </ul>
@@ -63,6 +61,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+
 
 	<!-- *****************************************************************************************************************
 	 BLUE WRAP
@@ -76,54 +75,55 @@
 	</div><!-- /blue -->
 
 	<!-- *****************************************************************************************************************
-	 
-	 CONTACT FORMS
+	 TITLE & CONTENT
 	 ***************************************************************************************************************** -->
 
-	 <div class="container mtb">
+	 <div class="container mt">
 	 	<div class="row">
-	 		<div class="col-lg-8">
-	 			<h4>Just Get In Touch!</h4>
-	 			<div class="hline"></div>
-		 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-		 			<form role="form">
-					  <div class="form-group">
-					    <label for="InputName1">Your Name</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1">
-					  </div>
-					  <div class="form-group">
-					    <label for="InputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1">
-					  </div>
-					  <div class="form-group">
-					    <label for="InputSubject1">Subject</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1">
-					  </div>
-					  <div class="form-group">
-					  	<label for="message1">Message</label>
-					  	<textarea class="form-control" id="message1" rows="3"></textarea>
-					  </div>
-					  <button type="submit" class="btn btn-theme">Submit</button>
-					</form>
-			</div><! --/col-lg-8 -->
+		 	<div class="col-lg-10 col-lg-offset-1 centered">
+			 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  </ol>
 
-	 		<div class="col-lg-4">
+				  <!-- Wrapper for slides -->
+				  <div class="carousel-inner">
+				    <div class="item active">
+				      <img src="assets/img/portfolio/contactimg.jpg" alt="">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/portfolio/contactimg2.jpg" alt="">
+				    </div>
+				    <div class="item">
+				      <img src="assets/img/portfolio/contactimg3.jpg" alt="">
+				    </div>
+				  </div>
+				</div><! --/Carousel -->
+		 	</div>
+
+		 	<div class="col-lg-5 col-lg-offset-1">
+			 	<div class="spacing"></div>
+		 		<h4>Non-profit Organization Status</h4>
+		 		<p>The Japanese Women's Society Foundation is a non-profit, 501(c)(3) organization.<br> <br>Taxpayer ID# 99-0354737 </p><br>
+		 		<h4>To Find Out More</h4>
+		 		<p>For more information about JWSF, check out our facebook page or subscribe to our monthly newsletter.</p><br><br><br>
+		 	</div>
+
+		 	<div class="col-lg-4 col-lg-offset-1">
+			 	<div class="spacing"></div>
 		 		<h4>Our Address</h4>
 		 		<div class="hline"></div>
-		 			<p>
-		 				Some Ave, 987,<br/>
-		 				23890, New York,<br/>
-		 				United States.<br/>
-		 			</p>
-		 			<p>
-		 				Email: hello@solidtheme.com<br/>
-		 				Tel: +34 8493-4893
-		 			</p>
-		 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-	 		</div>
+		 		<p>Japanese Women's Society Foundation <br>
+          P.O. Box 3233<br>
+		 		Honolulu, HI 96801<br>
+          United States</p>
+		 	</div>
+
 	 	</div><! --/row -->
 	 </div><! --/container -->
-
 
 	<!-- *****************************************************************************************************************
 	 FOOTER
@@ -171,5 +171,88 @@
   	<script src="assets/js/custom.js"></script>
 
 
+    <script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);
+		}
+
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+
+		function getColumnNumber() {
+			var winWidth = $(window).width(),
+			columnNumber = 1;
+
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}
+
+			function setColumns() {
+				var winWidth = $(window).width(),
+				columnNumber = getColumnNumber(),
+				itemWidth = Math.floor(winWidth / columnNumber);
+
+				$container.find('.portfolio-item').each(function() {
+					$(this).css( {
+					width : itemWidth + 'px'
+				});
+			});
+		}
+
+		function setPortfolio() {
+			setColumns();
+			$container.isotope('reLayout');
+		}
+
+		$container.imagesLoaded(function () {
+			setPortfolio();
+		});
+
+		$(window).on('resize', function () {
+		setPortfolio();
+	});
+})(jQuery);
+</script>
   </body>
 </html>
+
